@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main(){
 	int arr[100];
-	int n, a, b = 1, c = 1, d=1, add, addposition, xoa, choice;
+	int n, a, b = 1, c = 1, d=1, add, addposition, xoa, choice, SSNT=0, SNT;
 	int min = arr[0];
 	while(a){
 		printf("\n---MENU---\n");
@@ -41,6 +41,29 @@ int main(){
 				for(int i=0; i<n; i++){
 					printf("arr[%d]=%d\t", i, arr[i]);
 				}
+			break;
+			case 3://Tim so nguyen to
+				printf("Co so nguyen to trong mang: ");
+				for(int i=0; i<n; i++){
+				int SNT = arr[i];
+				int KT = 1;
+	                if(SNT < 2){
+	                        KT = 0;
+	                }else{
+	                    for (int j = 2; j * j <= SNT; j++) {
+	                        if (SNT % j == 0) {
+	                            KT = 0;
+	                            break;
+	                            }
+	                        }
+	                    }
+	
+	                    if(KT){
+	                       SSNT++;
+	                       
+	                    }
+	                }
+	                printf("%d", SSNT);
 			break;
 			case 4://Tim gia tri nho thu 2 trong mang
 				printf("Gia tri nho thu 2 trong mang la: ");
